@@ -21,28 +21,40 @@ img {
 	display: block;
 	margin: 0px auto;
 	background-color: #FEFEFE;
-	height: /* @ 541px */
 }
 
 /* these are the different divs within each shirt
-.whole, .top, .middle, .flip, .love, .size, .color, .cart, .bottom {
+.whole, .top, .middle, .flip, .love, .size, .color, .cart, .bottom */
 
-}	*/
-
-.whole {
+.whole {							/* entire tshirt and menus */
 	width: 25%;
 	display: inline-block;
 	margin: 40px 25px;
+	margin-top: 10px;
 	vertical-align: top;
 }
 
-.top {
+.top {								/* tshirt only */
 	border: 3px solid #5CA4D7;
 	position: relative;
 }
 
+	.shirtFront {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		backface-visibility: hidden;
+	}
+
+	.shirtBack {
+		display: block;
+		transform: rotateY(180deg);
+		box-sizing: border-box;
+		text-align: center;
+	}
+
 	#spacer {
-		padding-bottom: 50px;
+		padding-bottom: 10px;
 		width: 100%;
 		height: 100%;  					/* orange shirt bottom not aligning with other two */
 	}
@@ -63,7 +75,6 @@ img {
 	font-size:0px;
 	height: 50px;
 }
-
 /* 5 sections of .middle = .flip, .love, .size, .color, .cart  20% each */
 
 	.flip {
@@ -92,6 +103,47 @@ img {
 		position: relative;
 	}
 
+		/* dropdown menus for .size */
+		.dropdown-size {
+			display: none;
+			position: absolute;
+			background-color: #FEFEFE;
+			min-width: 50px;
+			width: 150%;
+			min-height: 100px;
+			margin-top: -150px;
+			border: 2px solid #5CA4D7;
+			padding: 3px 8px;
+			text-align: center;
+			margin-left: -15px;     
+		}
+
+		.size:hover .dropdown-size {
+			display: block;
+			animation: contentDropIn .5s;
+		}
+
+		.arrow {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			transform: rotate(45deg);
+			background-color: #FEFEFE;
+			border: 2px solid #5CA4D7;
+			border-top: none;
+			border-left: none;
+			z-index: 2;
+			margin-left: -10px;
+			margin-top: 16px;
+		}
+
+		ul {
+			list-style-type: none;
+			color: #5CA4D7;
+			margin-left: -40px;
+		}
+
 	.color {
 		position: relative;
 		width: 20%;
@@ -104,6 +156,10 @@ img {
 		
 	}
 
+		.swatch-container {
+			position: relative;
+		}
+
 		.swatch {
 			width: 25px;
 			height: 25px;
@@ -111,29 +167,88 @@ img {
 			background-color: #80BBE5;
 			margin: 6px;
 			padding: 15px; 
-			position: absolute;
-			margin-left:-18px;
+			position: relative;
+			margin-left:4px;
 		}
 
-			.blue {
+			/* change swatch blue to swatchBlue (html line 57) and repeat for pink & orange???
+
+			.swatchBlue {
+				color: #80BBE5;
+				border: 2px solid white;
+
+			.swatchPink {
+				color: #D482AA;
+				border: 2px solid white;
+
+			.swatchOrange {
+				color: #DCB07D;
+				border: 2px solid white;
+			}*/
+
+			.blue, .pink, .orange, .green {
 				background-color: #5CA4D7;
 				border: 2px solid white;
 			}
 
-			.pink {
-				background-color: #D482AA;
-				border: 2px solid white;
-			}
+		/* dropdown menus for color */
+		.dropdown-color {
+			display: none;
+			position: absolute;
+			background-color: #FEFEFE;
+			min-width: 85px;
+			width: 43%;
+			min-height: 60px;
+			margin-top: -115px;		
+			border: 2px solid #5CA4D7;
+			padding: 3px 8px;
+			z-index: 1;
+		}
 
-			.orange {
-				background-color: #DCB07D;
-				border: 2px solid white;
-			}
+		.color:hover .dropdown-color {
+			display: block;
+			animation: contentDropIn .5s;
+		}
 
-			.green {
-				background-color: #94BE9A;
-				border: 2px solid white;
-			}
+		.arrowColor {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			transform: rotate(45deg);
+			background-color: #FEFEFE;
+			border: 2px solid #5CA4D7;
+			border-top: none;
+			border-left: none;
+			z-index: 2;
+			margin-left: -39px;
+			margin-top: 23px;
+		}
+
+		.colorSelect {
+			height: 25px;
+			width: 25px;
+			display: inline-block;
+			margin: 2px;
+			/* for the entire thing */
+		}
+
+		#blue {
+			background-color: #80BBE5; 
+			margin-top: /* top, bottom, left, right */ ;
+		}
+
+		#pink {
+			background-color: #D482AA;
+		}
+
+		#orange {
+			background-color: #DCB07D;
+		}
+
+		#green {
+			background-color: #94BE9A;
+		}
 
 	.cart {
 		width: 20%;
@@ -143,6 +258,11 @@ img {
 		border-right: 3px solid #5CA4D7;
 		color: #5cA4D7;
 	}
+
+.share:hover, .flip:hover, .love:hover, .size:hover, .color:hover, .cart:hover {
+	background-color: #5CA4D7;
+	color: white;
+}
 
 /* end of 5 sections for middle */
 
@@ -159,45 +279,55 @@ img {
 		text-align: left;
 	}
 
-	.bottom h3 {
+	.bottom h2 {
 		display: inline-block;
 		width: 20%;
 		text-align: center;
 	}
 
-.share:hover, .flip:hover, .love:hover, .size:hover, .color:hover, .cart:hover {
+/* animation */
+@keyframes contentDropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+
+      }
+  30% {
+    opacity: .6;
+    }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* "footer" area */
+
+.shoppingCart {
 	background-color: #5CA4D7;
-	color: white;
+	color: #FEFEFE;
+	margin-top: -40px;
+	padding-bottom: 15px;
+	border-top: 2px solid #000000;
 }
 
-/* dropdown menus for size */
-
-.dropdown-size {
-	display: none;
-	position: absolute;
+#cart_logo {
 	background-color: #FEFEFE;
-	min-width: 50px;
-	width: 150%;
-	margin-top: -195px;
-	border: 2px solid #5CA4D7;
-	padding: 3px 8px;
-	text-align: center;
-	margin-left: -15px;     /* add square like dog animation: rotate(45deg); */
-}
-
-.size:hover .dropdown-size {
-	display: block;
-}
-
-ul {
-	list-style-type: none;
 	color: #5CA4D7;
+	margin-top: -10px;
+	border-radius: 50%;
+	border: 2px solid #000000;
+	padding: 20px;
+	margin-bottom: -50px;
 }
 
-/* dropdown menus for color */
+.totals {
+	margin-top: -20px;
+}
 
-.color:hover .dropdown-color {
-	display: block;
+#itemsInCart {
+	width: 100%;
+	/*height: 50px;*/
 }
 
 /* Make 3 tshirts stack vertically (one column) when browser "on sufficiently small screens" */

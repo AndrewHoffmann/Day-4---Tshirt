@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Our 4th Website</title>
+	<title>11th T-Shirt</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<link rel="stylesheet" type="text/css" href="normalize.css">
 	<script src="https://use.fontawesome.com/5cc92d7ee9.js"></script>
@@ -11,13 +11,19 @@
 	
 	<main id="Container">
 
-							<!-- BLUE tshirt -->
+		<!-- BLUE tshirt -->
 
 		<div class="whole"> 				<!-- entire tshirt and menus -->
 
-
 			<div class="top"> 				<!-- tshirt only -->
-				<img src="TeeShirtStocks/blueshirt.png" alt="blueshirt">
+				<!--<div class="shirtFront">-->
+					<img src="TeeShirtStocks/blueShirt.png" alt="blueshirt">
+				<!--</div>
+
+				<div class="shirtBack">
+					<img src="TeeShirtStocks/blueBack.png" alt="blueshirt">
+				</div>	-->
+
 				<div class="share">
 					<p><i class="fa fa-share" aria-hidden="true"></i></p>
 				</div>
@@ -41,19 +47,25 @@
 							<li>L</li>
 							<li>M</li>
 							<li>S</li>
+							<div class="arrow"></div>
 						</ul>
 					</div>
 				</div>
 
 				<div class="color">
-					<div class="swatch blue"></div>		<!-- need blue topleft, pink topright, 
-															orange bottomright, green bottomleft -->	
+					<div class="swatch-container">
+							<div class="swatch blue"></div>
+					</div>			
 					<div class="dropdown-color">
-					
+						<div class="colorSelect" id="blue"></div>
+						<div class="colorSelect" id="pink"></div>
+						<div class="colorSelect" id="orange"></div>
+						<div class="colorSelect" id="green"></div>
+						<div class="arrowColor"></div>	
 					</div>
-				</div>
+				</div>		
 
-				<div class="cart">
+				<div id="blueCart" class="cart">
 					<p><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
 				</div>
 
@@ -61,18 +73,17 @@
 
 			<div class="bottom"> 			<!-- text and price only -->
 				<p>Save my trees</p>
-				<h3>$29</h3>
+				<h2>$29</h2>
 			</div>
 
 		</div>
 
-
-							<!-- PINK tshirt -->
-<div class="whole"> 				<!-- entire tshirt and menus -->
-
+		<!-- PINK tshirt -->
+		
+		<div class="whole"> 	<!-- entire tshirt and menus -->
 
 			<div class="top"> 				<!-- tshirt only -->
-				<img src="TeeShirtStocks/pinkshirt.png" alt="blueshirt">
+				<img src="TeeShirtStocks/pinkShirt.png" alt="pinkshirt">
 				<div class="share">
 					<p><i class="fa fa-share" aria-hidden="true"></i></p>
 				</div>
@@ -89,14 +100,32 @@
 				</div>
 
 				<div class="size">
-					<p><strong>XL</strong></p>
+					<p><strong><span>XL</span></strong></p>	
+					<div class="dropdown-size">	<!-- top XL L M S bottom -->
+						<ul>
+							<li>XL</li>
+							<li>L</li>
+							<li>M</li>
+							<li>S</li>
+							<div class="arrow"></div>
+						</ul>
+					</div>
 				</div>
 
 				<div class="color">
-					<div class="swatch pink"></div>
-				</div>
+					<div class="swatch-container">
+							<div class="swatch pink"></div>
+					</div>			
+					<div class="dropdown-color">
+						<div class="colorSelect" id="blue"></div>
+						<div class="colorSelect" id="pink"></div>
+						<div class="colorSelect" id="orange"></div>
+						<div class="colorSelect" id="green"></div>
+						<div class="arrowColor"></div>	
+					</div>
+				</div>	
 
-				<div class="cart">
+				<div id="pinkCart" class="cart">
 					<p><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
 				</div>
 
@@ -104,16 +133,18 @@
 
 			<div class="bottom"> 			<!-- text and price only -->
 				<p>Nature Lover</p>
-				<h3>$19</h3>
+				<h2>$19</h2>
 			</div>
 
 		</div>
-							<!-- ORANGE tshirt -->
+
+		<!-- ORANGE tshirt -->
+
 		<div class="whole"> 				<!-- entire tshirt and menus -->
 
 
 			<div class="top"> 				<!-- tshirt only -->
-				<img id="spacer" src="TeeShirtStocks/orangeshirt.png" alt="blueshirt">
+				<img id="spacer" src="TeeShirtStocks/orangeShirt.png" alt="orangeshirt">
 				<div class="share">
 					<p><i class="fa fa-share" aria-hidden="true"></i></p>
 				</div>
@@ -130,14 +161,32 @@
 				</div>
 
 				<div class="size">
-					<p><strong>XL</strong></p>
+					<p><strong><span>XL</span></strong></p>	
+					<div class="dropdown-size">	<!-- top XL L M S bottom -->
+						<ul>
+							<li>XL</li>
+							<li>L</li>
+							<li>M</li>
+							<li>S</li>
+							<div class="arrow"></div>
+						</ul>
+					</div>
 				</div>
 
 				<div class="color">
-					<div class="swatch orange"></div>
-				</div>
+					<div class="swatch-container">
+							<div class="swatch orange"></div>
+					</div>			
+					<div class="dropdown-color">
+						<div class="colorSelect" id="blue"></div>
+						<div class="colorSelect" id="pink"></div>
+						<div class="colorSelect" id="orange"></div>
+						<div class="colorSelect" id="green"></div>
+						<div class="arrowColor"></div>	
+					</div>
+				</div>	
 
-				<div class="cart">
+				<div id="orangeCart" class="cart">
 					<p><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
 				</div>
 
@@ -145,12 +194,28 @@
 
 			<div class="bottom"> 			<!-- text and price only -->
 				<p>Forrest Walk</p>
-				<h3>$39</h3>
+				<h2>$39</h2>
 			</div>
 
 		</div>
 
+		<!-- shopping cart -->
+		
+		<div class="shoppingCart">
+			
+			<h1><i class="fa fa-shopping-basket" aria-hidden="true" id="cart_logo"></i></h1><br>
+
+			<div class="totals">
+				<h3>SUBTOTAL: $<span id="subtotal"></span></h3> 	<!-- without tax -->
+				<h3>TOTAL: $<span id="total"></span></h3>		<!-- with tax -->	
+			</div>
+			<div id="itemsInCart"></div>
+		</div>
+
 	</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="js/main.js" type="text/javascript" charset="utf-8" async defer></script> <!-- to link with JavaScript -->
 
 </body>
 
